@@ -1,0 +1,170 @@
+/* CSS styles for navbar, header, and main content */  
+  .navbar {
+    background-color: #fFF;
+    /* padding: 10px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .navbar li {
+    float: left;
+  }
+  
+  .navbar .logo {
+    width: 4rem;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  
+  .navbar li a {
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .navbar .logo {
+    font-weight: bold;
+    position: relative;
+    left: 1px;
+    top: 4px;
+  }
+  
+  .navbar .buttons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar .buttons .signupbutton {
+    font-size: 15px;
+    margin-left: 10px;
+    padding: 8px 16px;
+    background-color: #489486;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-right: 20px;
+    position: relative;
+    right: 12px;
+    top: 8px;
+  }
+  
+  .navbar .buttons .loginbutton {
+    font-size: 15px;
+    margin-left: 10px;
+    padding: 8px 16px;
+    background-color: #48948600;
+    color: #000000;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    right: 6px;
+    top: 8px;
+  }
+  
+  
+  .navbar .buttons .login {
+    font-size: 19px;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .header {
+    background-color: #e8fbf1;
+    padding: 60px;
+    margin: 20px;
+    border-radius: 50px;
+  }
+  
+  .headercontent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .headertext {
+    width: 60%;
+  }
+  
+  /*-------------------------------------------------------------------------------------*/
+  .headerimage {
+    padding: 2px;
+    width: 34.7%;
+    height: 526px;
+  }
+  
+  .header .headerimage img {
+    position: relative;
+    top: -63px;
+    width: 114.8%;
+    border-radius: 50px;
+  }
+  
+  
+  .header h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  
+  .header .tagline {
+    font-size: 30px;
+    margin-bottom: 10px;
+    opacity: 0.4;
+    position: relative;
+    left: 5px;
+    top: -6px;
+  }
+  
+  .headerbutton {
+    font-size: 27px;
+    padding: 10px 20px;
+    background-color: #FCD7AC;
+    border-radius: 50px;
+    color: black;
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+  }
+  
+  .header .headercontent .headertext .get {
+    font-size: 60px;
+    font-weight: 100;
+  }
+  
+  .header .headercontent .headertext .title {
+    font-size: 96px;
+    margin-top: 0;
+    font-weight: 900;
+  }
+  
+  
+  
+  /* .main {
+      background-color: #daa76a;
+      padding: 10px;
+      padding-left: 40px;
+      margin: 20px;
+      border-radius: 50px;
+      /* padding-bottom: 200px; */
+  /* } */
+  
+  /* .main .main-content .main-text .h1 .replace {
+      color: #fff;
+    }
+  
+    .main .main-content .main-text .h1 {
+          font-size: 48px;
+       */
