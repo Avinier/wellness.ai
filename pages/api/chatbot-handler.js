@@ -23,6 +23,8 @@ export default async function chatBotHandler(req, res) {
         }),
       });
 
+      console.log(req.body.user);
+
       const model = new ChatOpenAI({
         modelName: "gpt-3.5-turbo",
         temperature: 0,
@@ -43,6 +45,7 @@ export default async function chatBotHandler(req, res) {
       const chain = new ConversationChain({ llm: model, prompt, memory });
 
       const ans = await chain.call({ input: req.body.question });
+      console.log(await memory.loadMemoryVariables({}));
 
       res.status(200).json(ans["response"]);
     }

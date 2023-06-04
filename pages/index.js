@@ -24,7 +24,11 @@ export default function Home() {
             />
           </li>
         </ul>
-        <div className="buttons"></div>
+        <div className="buttons">
+          <button className={styles.loginbutton} onClick={submitHandler}>
+            LOG IN
+          </button>
+        </div>
       </div>
 
       <div className={styles.header}>
@@ -57,16 +61,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      {/* <div className="geolocation-info">
-        {latitude && longitude ? (
-          <p>
-            Latitude: {latitude.toFixed(6)}, Longitude: {longitude.toFixed(6)}
-          </p>
-        ) : (
-          <p>Fetching geolocation...</p>
-        )}
-      </div> */}
     </>
   );
 }
