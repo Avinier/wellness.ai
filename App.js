@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./style.css";
 import logo from "./assets/logo.png";
 import banner from "./assets/banner.png";
-import { signInWithGoogle } from "./pages/firebase";
+import { signInWithGoogle } from "./src/firebase";
 
 function App() {
   const [latitude, setLatitude] = useState(null);

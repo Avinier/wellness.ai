@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 import styles from "../styles/Chatbot.module.css";
 
-import { auth } from "./firebase";
+import { auth } from "../src/firebase";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { useAuthState, userAuthState } from "react-firebase-hooks/auth";
 import Image from "next/image";
