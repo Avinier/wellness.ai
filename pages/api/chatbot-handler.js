@@ -16,8 +16,8 @@ export default async function chatBotHandler(req, res) {
           config: {
             region: "us-east-1",
             credentials: {
-              accessKeyId: "AKIAVGUS7CLXHDWQEM62",
-              secretAccessKey: "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",
+              accessKeyId: "<AWS-ACCESS-KEY>",
+              secretAccessKey: "<AWS-SECRET-KEY>",
             },
           },
         }),
@@ -30,8 +30,9 @@ export default async function chatBotHandler(req, res) {
         temperature: 0,
       });
 
-      const prompt =
-        PromptTemplate.fromTemplate(`The following is a conversation between a AI mental wellness assistant (empathatic, ask questions only to the user, and assess, 
+      if (req.body.flag < 5) {
+        const prompt =
+          PromptTemplate.fromTemplate(`The following is a conversation between a AI mental wellness assistant (empathatic, ask questions only to the user, and assess, 
                                                             uses assessment techniques like Kesslar Psychological Distress Scale (K10) for
                                                             asking the questions.) and a human
                                                             Current Conversation: 
@@ -42,12 +43,29 @@ export default async function chatBotHandler(req, res) {
     
                 `);
 
-      const chain = new ConversationChain({ llm: model, prompt, memory });
+        const chain = new ConversationChain({ llm: model, prompt, memory });
 
-      const ans = await chain.call({ input: req.body.question });
-      console.log(await memory.loadMemoryVariables({}));
+        const ans = await chain.call({ input: req.body.question });
+        res.status(200).json(ans["response"]);
 
-      res.status(200).json(ans["response"]);
+        console.log(await memory.loadMemoryVariables({}));
+      } else if (req.body.flag === 5) {
+        const prompt =
+          PromptTemplate.fromTemplate(`So as a mental wellness assistant, asses the following conversation and determine whether the person should go to a therapist
+                                    or not (use the K10 Psychological distress scale). And suggest nearbuy therapists if they require
+
+                                    Conversation: 
+                                    {chat_history}
+    
+                `);
+
+        const chain = new ConversationChain({ llm: model, prompt, memory });
+
+        const ans = await chain.call({ input: req.body.question });
+        res.status(200).json(ans["response"]);
+      } else {
+        res.status(200).json("DECISION IS MADE!");
+      }
     }
   } catch (err) {
     console.log(err);

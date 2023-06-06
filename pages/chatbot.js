@@ -17,6 +17,8 @@ const Chatbot = () => {
   const [user, setUser] = useAuthState(auth);
   const [isUser, setIsUser] = useState(false);
 
+  const [convoFlag, setConvoFlag] = useState(0);
+
   async function login() {
     const res = await signInWithPopup(auth, googleAuth);
   }
@@ -36,11 +38,13 @@ const Chatbot = () => {
         body: JSON.stringify({
           question: inputMessage,
           user: user.email,
+          flag: convoFlag,
         }),
       });
 
       const resData = await res.json();
       setResponse(resData);
+      setConvoFlag((prev) => prev + 1);
 
       setMessageHistory([...messageHistory, inputMessage]);
       setResponseHistory([...responseHistory, response]);
@@ -51,35 +55,29 @@ const Chatbot = () => {
 
   return (
     <>
-      <nav>
-        <div className="nav">
-          {isUser ? (
-            <button className="signup-button" onClick={login}>
-              SIGN IN
-            </button>
-          ) : (
-            <div>
-              <Image
-                src={isUser ? user.photoURL : "/logo.png"}
-                height={50}
-                width={50}
-              />
-              <p>{isUser ? user.displayName : ""}</p>
-            </div>
-          )}
-        </div>
+      <nav className="nav">
+        <Image
+          src={"/logo.png"}
+          height={72}
+          width={89}
+          alt="Logo"
+          className="logo"
+        />
+        <button className={styles.signupbtn} onClick={login}>
+          SIGN IN
+        </button>
       </nav>
       <h1 className={styles.title}>Wellness.ai</h1>
       <div className={styles.chatcontainer}>
-        <input
-          className={styles.userinput}
-          placeholder="start a conversation with..."
-          onChange={(e) => {
-            e.preventDefault();
-            setInputMessage(e.target.value);
-          }}
-        />
-        <div className={styles.buttoncontainer}>
+        <div className={styles.inputcontainer}>
+          <input
+            className={styles.userinput}
+            placeholder="start a conversation with..."
+            onChange={(e) => {
+              e.preventDefault();
+              setInputMessage(e.target.value);
+            }}
+          />
           <button className={styles.sendbutton} onClick={submitHandler}>
             Send
           </button>

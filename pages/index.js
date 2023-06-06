@@ -12,25 +12,6 @@ export default function Home() {
   }
   return (
     <>
-      <div className="navbar">
-        <ul>
-          <li>
-            <Image
-              src={"/logo.png"}
-              height={72}
-              width={89}
-              alt="Logo"
-              className="logo"
-            />
-          </li>
-        </ul>
-        <div className="buttons">
-          <button className={styles.loginbutton} onClick={submitHandler}>
-            LOG IN
-          </button>
-        </div>
-      </div>
-
       <div className={styles.header}>
         <div className={styles.headercontent}>
           <div className={styles.headertext}>
