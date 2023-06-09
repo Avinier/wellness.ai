@@ -1,6 +1,7 @@
 ## Introduction and Proposed Solution
 
-Wellness.ai is a compassionate friend for anyone facing mental health challenges, our chatbot is here to lend an empathetic ear. We're here to listen to your concerns and help you determine whether seeking the support of a therapist could be beneficial for you.
+Many individuals hesitate to pursue therapy or seek mental health support due to the prevailing stigma surrounding mental health. They often struggle with uncertainty regarding whether they should consider therapy, which prevents them from taking proactive steps towards addressing their mental well-being. Empower in recognizing need for therapy. <br>
+Wellness.ai is a compassionate friend for anyone facing mental health challenges, our chatbot is here to lend an empathetic ear. We're here to listen to your concerns and help you determine whether seeking the support of a therapist could be beneficial for you.<br>
 We do not aim to replace therapists; instead, we connect individuals to therapists if they require professional assistance.
 
 <h2> Preview :</h2>
